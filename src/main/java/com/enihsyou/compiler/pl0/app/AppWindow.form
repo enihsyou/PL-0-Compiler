@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.enihsyou.compiler.pl0.app.AppWindow">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="1051" height="790"/>
+    </constraints>
+    <properties>
+      <minimumSize width="640" height="360"/>
+      <preferredSize width="960" height="720"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <splitpane id="6b176">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="630"/>
+          </grid>
+        </constraints>
+        <properties>
+          <dividerLocation value="500"/>
+          <lastDividerLocation value="862"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <splitpane id="d9816">
+            <constraints>
+              <splitpane position="right"/>
+            </constraints>
+            <properties>
+              <dividerLocation value="530"/>
+              <orientation value="0"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <tabbedpane id="aa2bd" binding="tabbedPanel">
+                <constraints>
+                  <splitpane position="left"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="aa1d8" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <tabbedpane title="词法分析"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <scrollpane id="c17c2">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <enabled value="true"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="a861c" class="javax.swing.JTable" binding="lexerPanel" custom-create="true">
+                            <constraints/>
+                            <properties/>
+                          </component>
+                        </children>
+                      </scrollpane>
+                    </children>
+                  </grid>
+                  <grid id="3f57a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <tabbedpane title="程序结构"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <scrollpane id="27ba2">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="1b503" class="javax.swing.JTree" binding="syntaxTree">
+                            <constraints/>
+                            <properties/>
+                          </component>
+                        </children>
+                      </scrollpane>
+                    </children>
+                  </grid>
+                </children>
+              </tabbedpane>
+              <scrollpane id="cba0b">
+                <constraints>
+                  <splitpane position="right"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="7c6ba" class="javax.swing.JTextArea" binding="errorPanel">
+                    <constraints/>
+                    <properties>
+                      <editable value="false"/>
+                      <focusable value="true"/>
+                      <font name="Source Han Sans SC Regular" size="14"/>
+                      <foreground color="-7068105"/>
+                      <text value=""/>
+                      <toolTipText value=""/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </splitpane>
+          <scrollpane id="2e09" binding="editorScrollPanel">
+            <constraints>
+              <splitpane position="left"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="d0585" class="javax.swing.JTextArea" binding="codeEditor">
+                <constraints/>
+                <properties>
+                  <font name="Fantasque Sans Mono" size="16"/>
+                  <minimumSize width="640" height="400"/>
+                  <preferredSize width="640" height="852"/>
+                  <text value="const MAX_CAPACITY = 10000;&#10;&#10;var user_input, result;&#10;&#10;&#10;procedure print_range;&#10;    var current, is_prime;&#10;&#10;    procedure check_prime;&#10;        var i;&#10;        i := 2&#10;        while i &lt;= upper do&#10;        begin&#10;            if current - i * (current / i) = 0 then&#10;            begin&#10;                is_prime := 1;&#10;                i := upper&#10;            end&#10;        end&#10;    ;&#10;&#10;&#10;    if user_input &lt; 3 then&#10;        write 2&#10;&#10;    current := 3&#10;&#10;    while current &lt;= user_input do&#10;    begin&#10;        is_prime := 0;&#10;        call check_prime;&#10;        if is_prime &gt;= 0 then&#10;            write current;&#10;&#10;        current := current + 2&#10;    end&#10;;&#10;&#10;&#10;user_input := MAX_CAPACITY&#10;while user_input &gt;= MAX_CAPACITY do&#10;    read user_input&#10;&#10;call print_range&#10;write result&#10;.&#10;"/>
+                  <toolTipText value=""/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </splitpane>
+      <toolbar id="98ca1">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="20"/>
+          </grid>
+        </constraints>
+        <properties>
+          <floatable value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="7dadc" class="javax.swing.JButton" binding="compileButton">
+            <constraints/>
+            <properties>
+              <horizontalTextPosition value="0"/>
+              <maximumSize width="120" height="30"/>
+              <text value="点此编译"/>
+            </properties>
+          </component>
+          <component id="3f3c7" class="javax.swing.JToolBar$Separator">
+            <constraints/>
+            <properties/>
+          </component>
+          <component id="e085" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <text value="黄春翔 1517440121"/>
+            </properties>
+          </component>
+        </children>
+      </toolbar>
+    </children>
+  </grid>
+</form>

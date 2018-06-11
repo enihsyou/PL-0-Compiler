@@ -1,0 +1,11 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation group: 'org.antlr', name: 'antlr4', version: '4.7.1'
+
+}
+compileJava.options.encoding = 'UTF-8'

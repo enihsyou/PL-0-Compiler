@@ -1,0 +1,46 @@
+const MAX_CAPACITY = 10000;
+
+var user_input, result;
+
+
+procedure print_range;
+    var current, is_prime;
+
+    procedure check_prime;
+        var i;
+        i := 2
+        while i <= upper do
+        begin
+            if current - i * (current / i) = 0 then
+            begin
+                is_prime := 1;
+                i := upper
+            end
+        end
+    ;
+
+
+    if user_input < 3 then
+        write 2
+
+    current := 3
+
+    while current <= user_input do
+    begin
+        is_prime := 0;
+        call check_prime;
+        if is_prime >= 0 then
+            write current;
+
+        current := current + 2
+    end
+;
+
+
+user_input := MAX_CAPACITY
+while user_input >= MAX_CAPACITY do
+    read user_input
+
+call print_range
+write result
+.
